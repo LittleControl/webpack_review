@@ -1,0 +1,14 @@
+{
+  "name": "webpack_review",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LittleControl/webpack_review.git",
+  "author": "'LittleControl' <'littlecontrol2019@gmail.com'>",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^3.6.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
