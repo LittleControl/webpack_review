@@ -4,18 +4,11 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: 'built.js',
+        filename: 'js/built.js',
         path: resolve(__dirname, 'build')
     },
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            },
             {
                 test: /\.less$/,
                 use: [
@@ -25,22 +18,34 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|png|gif)$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 8 * 1024,
-                    esModule: false,
-                    name: '[hash:10].[ext]'
-                },
-
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             },
             {
                 test: /\.html$/,
-                loader: 'html-loader',
+                use: 'html-loader',
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                use: 'url-loader',
+                options: {
+                    limit: 8 * 1024,
+                    esModule: false,
+                    name: '[hash:10].[ext]',
+                    outputPath: 'img'
+                }
+
             },
             {
                 exclude: /\.(html|css|js|less|jpg|png|gif)$/,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                options: {
+                    name: '[hash:10].[ext]',
+                    outputPath: 'media'
+                }
             }
         ]
     },
@@ -49,5 +54,11 @@ module.exports = {
             template: './index.html'
         })
     ],
-    mode: 'development'
+    mode: 'development',
+    devServer: {
+        contentBase: resolve(__dirname, 'build'),
+        compress: true,
+        port: 8090,
+        open: true
+    }
 }
