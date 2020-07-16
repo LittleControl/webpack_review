@@ -65,12 +65,6 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'eslint-loader',
-            options: {
-              fix: true,
-            },
-          },
-          {
             //js兼容性处理
             loader: 'babel-loader',
             options: {
@@ -93,7 +87,13 @@ module.exports = {
                 ]
               ]
             }
-          }
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              fix: true,
+            },
+          },
         ],
       },
     ],

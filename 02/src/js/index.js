@@ -1,10 +1,10 @@
 /* eslint-disable semi */
 
 /* eslint-disable no-console */
-import '../css/index.css';
+import '../css/index.css'
 
 const myFunc = function myFunc() {
-  return 'LittleControl';
-};
+  return 'LittleControl'
+}
 
-console.log(myFunc());
+console.log(myFunc())
