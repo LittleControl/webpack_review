@@ -5,11 +5,12 @@ body {
     padding: 0;
     margin: 0;
     overflow: hidden;
-    background-color: bisque;
+    background-color: skyblue;
 }
 
 h1 {
     background-color: burlywood;
+    outline: 2px red solid;
 }
 
 #test {

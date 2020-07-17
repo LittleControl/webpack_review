@@ -8,7 +8,7 @@ js文件和html文件默认不使用HMR功能
 */
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry: ['./src/js/index.js', './index.html'],
     output: {
         filename: 'js/index.js',
         path: resolve(__dirname, 'build')
@@ -43,6 +43,7 @@ module.exports = {
         contentBase: resolve(__dirname, 'build'),
         compress: true,
         port: 8090,
-        open: true
+        open: true,
+        hot: true
     }
 }
