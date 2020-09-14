@@ -106,7 +106,6 @@ module.exports = {
     port: 8090,
     open: true,
     hot: true
-
   },
   devtool: 'cheap-module-source-map'
   /* 
